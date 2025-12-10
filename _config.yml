@@ -1,0 +1,23 @@
+# Jekyll Site Configuration
+title: SelfLearn Edu
+description: Modern, responsive educational website for Class 6-12 and competitive exams (JEE, NEET, UPSC, SSC)
+url: "https://sohailansarix.github.io"
+baseurl: "/SelfLearn-Edu"
+theme: null
+
+# Build settings
+markdown: kramdown
+include: ['.nojekyll']
+exclude: ['README.md', 'CONTRIBUTING.md', 'docs']
+
+# Collections for content
+collections:
+  lessons:
+    output: true
+    permalink: /:collection/:name/
+  quizzes:
+    output: true
+    permalink: /:collection/:name/
+  exercises:
+    output: true
+    permalink: /:collection/:name/
