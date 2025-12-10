@@ -1,0 +1,26 @@
+<!-- DAILY NOTICES - Easy to Update -->
+<!-- Simply add new notices to the top of the list below -->
+<!-- Format: <div data-date="YYYY-MM-DD" data-priority="high/normal">Notice text</div> -->
+
+<div id="notices-data" style="display:none;">
+  <div data-date="2024-12-10" data-priority="high">🔔 Important: Physics mock exam on 15th December at 2:00 PM. Syllabus: Mechanics and Thermodynamics</div>
+  <div data-date="2024-12-09" data-priority="normal">📚 New chapter added: Quadratic Equations - Start practicing from Exercise 4.1</div>
+  <div data-date="2024-12-08" data-priority="normal">✅ Chemistry Assignment 3 deadline extended to 12th December</div>
+  <div data-date="2024-12-07" data-priority="high">📝 Maths Quiz 2 scheduled for 10th December. Topics: Polynomials and Real Numbers</div>
+  <div data-date="2024-12-05" data-priority="normal">🎯 JEE Mock Test Series started. Register now to get access to 10 full-length tests</div>
+</div>
+
+<script>
+// This script loads and displays notices on the home page
+window.getNotices = function() {
+  const noticesDiv = document.getElementById('notices-data');
+  if (noticesDiv) {
+    return Array.from(noticesDiv.children).map(el => ({
+      date: el.getAttribute('data-date'),
+      priority: el.getAttribute('data-priority'),
+      text: el.innerText
+    }));
+  }
+  return [];
+};
+</script>
