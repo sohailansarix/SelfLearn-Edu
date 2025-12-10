@@ -1,249 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn Python control flow including if, elif, and else statements with examples.">
     <title>Lesson 4: Control Flow - If/Else Statements | SelfLearn</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        .content {
-            padding: 40px;
-        }
-        h2 {
-            color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        h3 {
-            color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        p {
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-        .code-block {
-            background: #f5f5f5;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 20px 0;
-            overflow-x: auto;
-            border-radius: 5px;
-        }
-        pre {
-            font-family: 'Courier New', monospace;
-            color: #333;
-            line-height: 1.5;
-        }
-        .example {
-            background: #e8f4f8;
-            border-left: 4px solid #764ba2;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        .key-point {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .footer {
-            background: #f9f9f9;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #ddd;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/base.css">
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/layout.css">
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/components.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Lesson 4: Control Flow - If/Else Statements</h1>
-            <p>Learn how to make decisions in Python</p>
-        </header>
-        <div class="content">
-            <h2>Introduction</h2>
-            <p>Control flow statements allow you to execute different blocks of code based on certain conditions. The most fundamental control flow structure is the <code>if/else</code> statement.</p>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/SelfLearn-Edu/index.html" class="logo">SelfLearn<span>Edu</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
+                <ul class="nav">
+                    <li><a href="/SelfLearn-Edu/index.html">Home</a></li>
+                    <li><a href="/SelfLearn-Edu/college/python-overview.html" class="active">Python</a></li>
+                </ul>
+            </nav>
+            <form class="site-search" role="search">
+                <input id="search-input" type="search" placeholder="Search lessons..." aria-label="Search">
+            </form>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+        </div>
+    </header>
 
-            <h2>The if Statement</h2>
-            <p>An <code>if</code> statement evaluates a condition and executes code only if that condition is True.</p>
-            <div class="code-block">
-                <pre>if condition:
-    # Code executes if condition is True
-    print("Condition is True")</pre>
-            </div>
+    <main id="main-content">
+        <article class="lesson" data-lesson-id="lesson-4" data-track="beginner">
+            <header class="lesson-header">
+                <div class="breadcrumb">
+                    <a href="/SelfLearn-Edu/college/python-overview.html">Python Course</a>
+                    <span> → </span>
+                    <a href="/SelfLearn-Edu/college/beginner/">Beginner Track</a>
+                    <span> → </span>
+                    <span>Lesson 4</span>
+                </div>
+                <h1 class="lesson-tag">Module 1 • Foundations</h1>
+                <h1>Control Flow - If/Else Statements</h1>
+                <p class="lesson-meta"><time>20 minutes</time> • <span class="badge">Beginner</span></p>
+            </header>
 
-            <h3>Example: Simple if Statement</h3>
-            <div class="example">
-                <pre>age = 18
+            <section class="lesson-content">
+                <h2>Learning Objectives</h2>
+                <ul>
+                    <li>Understand conditional statements (if, elif, else)</li>
+                    <li>Use comparison and logical operators</li>
+                    <li>Write nested conditional statements</li>
+                    <li>Apply if/else statements to solve problems</li>
+                </ul>
+
+                <h2>What are Conditional Statements?</h2>
+                <p>Conditional statements allow your program to make decisions and execute different code based on conditions.</p>
+
+                <h3>The if Statement</h3>
+                <pre><code>if condition:
+    # code executes if condition is True
+    print("Condition is True")</code></pre>
+
+                <h3>Example: if Statement</h3>
+                <pre><code>age = 18
 if age >= 18:
-    print("You are an adult")</pre>
-            </div>
-            <p><strong>Output:</strong> You are an adult</p>
+    print("You are an adult")</code></pre>
+                <p><strong>Output:</strong> You are an adult</p>
 
-            <h2>The if...else Statement</h2>
-            <p>The <code>else</code> clause provides an alternative code block to execute if the condition is False.</p>
-            <div class="code-block">
-                <pre>if condition:
-    # Code if condition is True
-else:
-    # Code if condition is False</pre>
-            </div>
+                <h2>The if...else Statement</h2>
+                <p>The else clause provides code to execute when the condition is False.</p>
 
-            <h3>Example: if...else Statement</h3>
-            <div class="example">
-                <pre>score = 75
+                <h3>Example: if...else Statement</h3>
+                <pre><code>score = 75
 if score >= 75:
-    print("A")
+    print("Pass")
 else:
-    print("Not A")</pre>
-            </div>
-            <p><strong>Output:</strong> A</p>
+    print("Fail")</code></pre>
 
-            <h2>The if...elif...else Statement</h2>
-            <p>The <code>elif</code> (else if) statement allows you to check multiple conditions.</p>
-            <div class="code-block">
-                <pre>if condition1:
-    # Code if condition1 is True
-elif condition2:
-    # Code if condition2 is True
-else:
-    # Code if both are False</pre>
-            </div>
+                <h2>The if...elif...else Statement</h2>
+                <p>Use elif to check multiple conditions.</p>
 
-            <h3>Example: if...elif...else Statement</h3>
-            <div class="example">
-                <pre>age = 15
+                <h3>Example: if...elif...else</h3>
+                <pre><code>age = 15
 if age < 13:
     print("Child")
 elif age < 18:
     print("Teenager")
 else:
-    print("Adult")</pre>
-            </div>
-            <p><strong>Output:</strong> Teenager</p>
+    print("Adult")</code></pre>
 
-            <h2>Comparison Operators</h2>
-            <p>These operators are used in conditions:</p>
-            <ul>
-                <li><code>==</code> (equal to): a == b</li>
-                <li><code>!=</code> (not equal to): a != b</li>
-                <li><code>></code> (greater than): a > b</li>
-                <li><code><</code> (less than): a < b</li>
-                <li><code>>=</code> (greater than or equal to): a >= b</li>
-                <li><code><=</code> (less than or equal to): a <= b</li>
-            </ul>
-
-            <h2>Logical Operators</h2>
-            <p>Combine multiple conditions using logical operators:</p>
-            <ul>
-                <li><code>and</code>: Both conditions must be True</li>
-                <li><code>or</code>: At least one condition must be True</li>
-                <li><code>not</code>: Reverses the boolean result</li>
-            </ul>
-
-            <h3>Example: Using Logical Operators</h3>
-            <div class="example">
-                <pre>age = 25
-has_license = True
-
-if age >= 18 and has_license:
-    print("You can drive")
-else:
-    print("You cannot drive")</pre>
-            </div>
-            <p><strong>Output:</strong> You can drive</p>
-
-            <h2>Nested if Statements</h2>
-            <p>You can nest if statements inside each other:</p>
-            <div class="code-block">
-                <pre>if condition1:
-    if condition2:
-        # Code executes only if both are True
-        print("Both conditions are True")</pre>
-            </div>
-
-            <h3>Example: Nested if Statements</h3>
-            <div class="example">
-                <pre>age = 20
-has_money = True
-
-if age >= 18:
-    if has_money:
-        print("You can buy a ticket")
-    else:
-        print("You need money")
-else:
-    print("Too young")</pre>
-            </div>
-
-            <h2>Key Points to Remember</h2>
-            <div class="key-point">
+                <h2>Comparison Operators</h2>
                 <ul>
-                    <li>Indentation is crucial in Python - it defines code blocks</li>
-                    <li>Conditions must evaluate to True or False</li>
-                    <li>Use comparison operators to create conditions</li>
-                    <li>Combine conditions with <code>and</code>, <code>or</code>, <code>not</code></li>
-                    <li>You can nest if statements for more complex logic</li>
+                    <li><code>==</code> (equal to)</li>
+                    <li><code>!=</code> (not equal to)</li>
+                    <li><code>></code> (greater than)</li>
+                    <li><code><</code> (less than)</li>
+                    <li><code>>=</code> (greater than or equal)</li>
+                    <li><code><=</code> (less than or equal)</li>
                 </ul>
-            </div>
 
-            <h2>Practice Exercise</h2>
-            <div class="example">
-                <p><strong>Task:</strong> Write a program that determines if a number is positive, negative, or zero.</p>
-                <p><strong>Hint:</strong> Use if...elif...else statements with comparison operators.</p>
-            </div>
-        </div>
-        <div class="footer">
-            <p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p>
-        </div>
-    </div>
+                <h2>Logical Operators</h2>
+                <ul>
+                    <li><code>and</code> - Both conditions must be True</li>
+                    <li><code>or</code> - At least one condition must be True</li>
+                    <li><code>not</code> - Reverses the boolean result</li>
+                </ul>
+
+                <h3>Example: Logical Operators</h3>
+                <pre><code>age = 25
+has_license = True
+if age >= 18 and has_license:
+    print("You can drive")</code></pre>
+
+                <h2>Practice Exercises</h2>
+                <h3>Exercise 4.1</h3>
+                <p>Write a program that checks if a number is positive, negative, or zero.</p>
+                <details>
+                    <summary>Solution</summary>
+                    <pre><code>num = int(input("Enter a number: "))
+if num > 0:
+    print("Positive")
+elif num < 0:
+    print("Negative")
+else:
+    print("Zero")</code></pre>
+                </details>
+
+                <h3>Exercise 4.2</h3>
+                <p>Create a program that determines if a person can vote (age >= 18).</p>
+                <details>
+                    <summary>Solution</summary>
+                    <pre><code>age = int(input("Enter your age: "))
+if age >= 18:
+    print("You can vote")
+else:
+    print("You cannot vote yet")</code></pre>
+                </details>
+            </section>
+
+            <section style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <div style="display: flex; gap: 1rem;">
+                    <a href="lesson-3.html" style="padding: 0.5rem 1rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; cursor: pointer;">← Previous</a>
+                    <button id="mark-complete" style="padding: 0.5rem 1rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer;" onclick="markLessonComplete(4)">✓ Complete</button>
+                    <a href="lesson-5.html" style="padding: 0.5rem 1rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; cursor: pointer; margin-left: auto;">Next →</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border);">
+        <p>© 2024 SelfLearn Edu</p>
+    </footer>
+
+    <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
+    <script src="/SelfLearn-Edu/assets/js/markLessonComplete.js"></script>
 </body>
 </html>
