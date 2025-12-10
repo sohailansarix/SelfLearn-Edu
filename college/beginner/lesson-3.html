@@ -3,118 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 3: Strings & Input/Output | SelfLearn-Edu</title>
-    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <meta name="description" content="Learn strings and input/output in Python. Master string methods, user input, f-strings, and string operations.">
+    <title>Lesson 3: Strings & Input/Output | SelfLearn</title>
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/base.css">
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/layout.css">
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/components.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>SelfLearn-Edu</h1>
-            <p>Learn Python Programming Step by Step</p>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/SelfLearn-Edu/index.html" class="logo">SelfLearn<span>Edu</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="main-nav">
+                <ul class="nav">
+                    <li><a href="/SelfLearn-Edu/index.html">Home</a></li>
+                    <li><a href="/SelfLearn-Edu/curriculum.html">Curriculum</a></li>
+                    <li><a href="/SelfLearn-Edu/college/python-overview.html" class="active">Python</a></li>
+                    <li><a href="/SelfLearn-Edu/faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <form class="site-search" role="search">
+                <input id="search-input" type="search" placeholder="Search lessons..." aria-label="Search">
+            </form>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </div>
     </header>
 
-    <main class="container">
-        <nav class="breadcrumb">
-            <a href="/SelfLearn-Edu/college/beginner/">Beginner Track</a>
-            / Lesson 3: Strings & Input/Output
-        </nav>
+    <main id="main-content">
+        <article class="lesson" data-lesson-id="lesson-3" data-track="beginner">
+            <header class="lesson-header">
+                <div class="breadcrumb">
+                    <a href="/SelfLearn-Edu/college/python-overview.html">Python Course</a>
+                    <span> → </span>
+                    <a href="/SelfLearn-Edu/college/beginner/">Beginner Track</a>
+                    <span> → </span>
+                    <span>Lesson 3</span>
+                </div>
 
-        <section class="lesson-content">
-            <h2>Lesson 3: Strings & Input/Output</h2>
-            <p>Learn to work with strings and get input from users.</p>
+                <h1>Lesson 3: Strings & Input/Output</h1>
 
-            <h3>What are Strings?</h3>
-            <p>Strings are sequences of characters enclosed in quotes. You can use single quotes, double quotes, or triple quotes:</p>
-            <div class="example">
+                <div class="lesson-metadata">
+                    <span class="time">⏱️ 30 minutes</span>
+                    <span class="difficulty">🎯 Beginner</span>
+                    <span class="progress">📊 Progress: <span id="progress-percent">0</span>%</span>
+                </div>
+            </header>
+
+            <section class="lesson-content">
+                <h2>Learning Objectives</h2>
+                <ul>
+                    <li>Work with string methods (upper, lower, strip, replace)</li>
+                    <li>Use input() to get user input</li>
+                    <li>Format strings with f-strings and format()</li>
+                    <li>Print output with multiple parameters</li>
+                    <li>Understand string concatenation and slicing</li>
+                </ul>
+
+                <h2>What are Strings?</h2>
+                <p>Strings are sequences of characters enclosed in quotes. You can use single quotes, double quotes, or triple quotes:</p>
                 <pre><code class="language-python">text = "Hello World"
 name = 'Alice'
 message = '''This is a
 multi-line string'''</code></pre>
-            </div>
 
-            <h3>String Methods</h3>
-            <p>Python provides many methods to work with strings:</p>
-            <div class="example">
+                <h2>String Methods</h2>
+                <p>Python provides many methods to work with strings:</p>
                 <pre><code class="language-python">text = "Hello World"
 print(text.upper())                 # HELLO WORLD
 print(text.lower())                 # hello world
 print(text.replace("World", "Python"))  # Hello Python</code></pre>
-            </div>
 
-            <h4>Common String Methods</h4>
-            <ul>
-                <li><code>upper()</code> - Convert to uppercase</li>
-                <li><code>lower()</code> - Convert to lowercase</li>
-                <li><code>strip()</code> - Remove leading/trailing whitespace</li>
-                <li><code>replace()</code> - Replace substrings</li>
-                <li><code>split()</code> - Split string into a list</li>
-                <li><code>join()</code> - Join list elements into a string</li>
-                <li><code>find()</code> - Find substring position</li>
-                <li><code>startswith()</code> - Check if string starts with substring</li>
-            </ul>
+                <h3>Common String Methods</h3>
+                <ul>
+                    <li><code>upper()</code> - Convert to uppercase</li>
+                    <li><code>lower()</code> - Convert to lowercase</li>
+                    <li><code>strip()</code> - Remove leading/trailing whitespace</li>
+                    <li><code>replace()</code> - Replace substrings</li>
+                    <li><code>split()</code> - Split string into a list</li>
+                    <li><code>join()</code> - Join list elements into a string</li>
+                    <li><code>find()</code> - Find substring position</li>
+                    <li><code>startswith()</code> - Check if string starts with substring</li>
+                </ul>
 
-            <h3>Getting User Input</h3>
-            <p>Use the input() function to get input from users:</p>
-            <div class="example">
+                <h2>Getting User Input</h2>
+                <p>Use the input() function to get input from users:</p>
                 <pre><code class="language-python">name = input("Enter your name: ")
 age = input("Enter your age: ")
 print("Name:", name)
 print("Age:", age)</code></pre>
-            </div>
 
-            <h3>F-Strings (Formatted String Literals)</h3>
-            <p>Modern way to format strings in Python 3.6+:</p>
-            <div class="example">
+                <h2>F-Strings (Formatted String Literals)</h2>
+                <p>Modern way to format strings in Python 3.6+:</p>
                 <pre><code class="language-python">name = "Alice"
 age = 25
 print(f"My name is {name} and I am {age} years old")
 print(f"My age next year: {age + 1}")</code></pre>
-            </div>
 
-            <h3>String Concatenation</h3>
-            <p>Combine strings using the + operator or join them:</p>
-            <div class="example">
+                <h2>String Concatenation</h2>
+                <p>Combine strings using the + operator:</p>
                 <pre><code class="language-python">first = "John"
 last = "Doe"
 full_name = first + " " + last
 print(full_name)  # John Doe</code></pre>
-            </div>
 
-            <h3>String Slicing</h3>
-            <p>Extract parts of a string using indexing:</p>
-            <div class="example">
+                <h2>String Slicing</h2>
+                <p>Extract parts of a string using indexing:</p>
                 <pre><code class="language-python">text = "Python"
 print(text[0])       # P (first character)
 print(text[0:3])     # Pyt (first 3 characters)
 print(text[-1])      # n (last character)</code></pre>
-            </div>
 
-            <h3>Key Points to Remember</h3>
-            <ul class="key-point">
-                <li>Strings are immutable sequences of characters</li>
-                <li>Use single or double quotes - they work the same way</li>
-                <li>Use triple quotes for multi-line strings</li>
-                <li>F-strings are the modern way to format strings</li>
-                <li>The input() function always returns a string</li>
-                <li>Use .strip() to remove whitespace from input</li>
-                <li>Remember that string indexing starts at 0</li>
-            </ul>
-        </section>
+                <h2>Practice Exercises</h2>
+                <h3>Exercise 3.1</h3>
+                <p>Get user's first and last name, then print full name using f-string.</p>
+                <details>
+                    <summary>Solution</summary>
+                    <pre><code class="language-python">first = input("Enter first name: ")
+last = input("Enter last name: ")
+full_name = f"{first} {last}"
+print(full_name)</code></pre>
+                </details>
 
-        <div class="navigation-buttons">
-            <a href="lesson-2.html" class="btn btn-secondary">← Previous: Variables & Data Types</a>
-            <a href="lesson-4.html" class="btn btn-primary">Next: Control Flow →</a>
-        </div>
+                <h3>Exercise 3.2</h3>
+                <p>Get user's favorite color and print it in uppercase and lowercase.</p>
+                <details>
+                    <summary>Solution</summary>
+                    <pre><code class="language-python">color = input("Enter your favorite color: ")
+print(color.upper())
+print(color.lower())</code></pre>
+                </details>
+            </section>
+
+            <footer class="lesson-navigation">
+                <a href="/SelfLearn-Edu/college/beginner/lesson-2.html" class="btn btn-secondary">← Previous Lesson</a>
+                <button id="mark-complete-btn" class="btn btn-primary" onclick="markLessonComplete('lesson-3')">✓ Mark as Complete</button>
+                <a href="/SelfLearn-Edu/college/beginner/lesson-4.html" class="btn btn-primary">Next Lesson →</a>
+            </footer>
+        </article>
     </main>
 
-    <footer>
-        <p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p id="progress-text">Progress: 0/10 lessons (0%)</p>
+        <p>&copy; 2024 SelfLearn Edu. Open-source project built for learners, by learners.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
-    <script src="/SelfLearn-Edu/assets/js/markLessonComplete.js"></script>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        });
+
+        function markLessonComplete(lessonId) {
+            const progress = JSON.parse(localStorage.getItem('py-progress') || '{"completed":[]}');
+            if (!progress.completed.includes(lessonId)) {
+                progress.completed.push(lessonId);
+                localStorage.setItem('py-progress', JSON.stringify(progress));
+                updateProgress();
+                document.getElementById('mark-complete-btn').textContent = '✓ Completed';
+                document.getElementById('mark-complete-btn').disabled = true;
+            }
+        }
+
+        function updateProgress() {
+            const progress = JSON.parse(localStorage.getItem('py-progress') || '{"completed":[]}');
+            const total = 10;
+            const percent = Math.round((progress.completed.length / total) * 100);
+            document.getElementById('progress-percent').textContent = percent + '%';
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').textContent = `Progress: ${progress.completed.length}/${total} lessons (${percent}%)`;
+        }
+        updateProgress();
+    </script>
 </body>
 </html>
