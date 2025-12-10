@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lesson 3: Strings & Input/Output | SelfLearn</title><link rel="stylesheet" href="/SelfLearn-Edu/assets/css/base.css"><link rel="stylesheet" href="/SelfLearn-Edu/assets/css/layout.css"><link rel="stylesheet" href="/SelfLearn-Edu/assets/css/components.css"></head><body><header class="site-header"><div class="header-container"><a href="/SelfLearn-Edu/index.html" class="logo">SelfLearn<span>Edu</span></a><nav id="main-nav"><ul class="nav"><li><a href="/SelfLearn-Edu/college/python-overview.html">Python</a></li></ul></nav></div></header><main id="main-content"><article class="lesson" data-lesson-id="lesson-3"><h1>Strings & Input/Output</h1><section class="lesson-content"><h2>Learning Objectives</h2><ul><li>Work with string methods (upper, lower, strip, replace)</li><li>Use input() to get user input</li><li>Format strings with f-strings and format()</li><li>Print output with multiple parameters</li></ul><h2>String Methods</h2><pre><code>text = "Hello World"
+print(text.upper())        # HELLO WORLD
+print(text.lower())        # hello world
+print(text.replace("World", "Python"))  # Hello Python</code></pre><h2>Getting User Input</h2><pre><code>name = input("Enter your name: ")
+age = input("Enter your age: ")
+print("Name:", name)
+print("Age:", age)</code></pre><h2>F-Strings (Formatted String Literals)</h2><pre><code>name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old")</code></pre><h2>String Concatenation</h2><pre><code>first = "John"
+last = "Doe"
+full_name = first + " " + last
+print(full_name)  # John Doe</code></pre><h2>String Slicing</h2><pre><code>text = "Python"
+print(text[0])      # P
+print(text[0:3])    # Pyt
+print(text[-1])     # n</code></pre></section><section style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-alt); border-radius: var(--radius);"><h2>Practice</h2><div><h3>Exercise 3.1</h3><p>Get user's first and last name, then print full name using f-string.</p><details><summary>Solution</summary><pre><code>first = input("First name: ")
+last = input("Last name: ")
+print(f"Full name: {first} {last}")</code></pre></details></div></section><section style="margin-top: 2rem;"><a href="lesson-2.html"><button>← Previous</button></a><button id="mark-complete-btn" onclick="markLessonComplete('lesson-3')">✓ Complete</button><a href="lesson-4.html"><button>Next →</button></a></section></article></main><script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script><script>function markLessonComplete(id){const p=JSON.parse(localStorage.getItem('py-progress')||'{"completed":[]}');if(!p.completed.includes(id)){p.completed.push(id);localStorage.setItem('py-progress',JSON.stringify(p));}}</script></body></html>
