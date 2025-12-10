@@ -37,6 +37,12 @@
       <a href="#curriculum" class="btn">Start Learning</a>
     </section>
 
+    <!-- Notices Section -->
+    <section id="notices-section" style="background:#fff3cd;border-left:4px solid #ffc107;padding:1rem;margin:2rem auto;max-width:1200px;border-radius:8px;">
+      <h2 style="margin:0 0 1rem 0;color:#856404;">📢 Important Notices</h2>
+      <div id="notices-list"></div>
+    </section>
+
     <section>
       <h2>Choose Your Track</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2rem">
@@ -76,5 +82,31 @@
   </footer>
 
   <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
+  <script>
+    // Load notices from notices.html
+    fetch('/SelfLearn-Edu/notices.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const noticesData = doc.getElementById('notices-data');
+        const noticesList = document.getElementById('notices-list');
+        
+        if (noticesData && noticesList) {
+          const notices = Array.from(noticesData.children).slice(0, 3); // Show only top 3
+          notices.forEach(notice => {
+            const date = notice.getAttribute('data-date');
+            const priority = notice.getAttribute('data-priority');
+            const text = notice.innerHTML;
+            
+            const noticeDiv = document.createElement('div');
+            noticeDiv.style.cssText = 'padding:0.75rem;margin:0.5rem 0;background:white;border-radius:4px;border-left:3px solid ' + (priority === 'high' ? '#dc3545' : '#6c757d');
+            noticeDiv.innerHTML = `<strong>${date}</strong> ${text}`;
+            noticesList.appendChild(noticeDiv);
+          });
+        }
+      })
+      .catch(err => console.log('Could not load notices'));
+  </script>
 </body>
 </html>
