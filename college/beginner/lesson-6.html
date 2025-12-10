@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: Functions | SelfLearn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        pre {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            line-height: 1.5;
+        }
+        .example {
+            background: #e8f4f8;
+            border-left: 4px solid #764ba2;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .key-point {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lesson 6: Functions</h1>
+            <p>Learn to write reusable code with functions</p>
+        </header>
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>A function is a reusable block of code that performs a specific task. Functions help you organize your code, avoid repetition, and make your programs more maintainable.</p>
+
+            <h2>Defining a Function</h2>
+            <p>Use the <code>def</code> keyword to define a function:</p>
+            <div class="code-block">
+                <pre>def function_name(parameters):
+    """Docstring - explains what the function does"""
+    # Function body
+    return result</pre>
+            </div>
+
+            <h3>Example: Simple Function</h3>
+            <div class="example">
+                <pre>def greet(name):
+    """Greet a person by name"""
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: Hello, Alice!</pre>
+            </div>
+
+            <h2>Function Parameters</h2>
+            <p>Parameters are variables that receive values when the function is called. Values passed to a function are called arguments.</p>
+            <div class="code-block">
+                <pre>def add(a, b):  # a and b are parameters
+    return a + b
+
+result = add(5, 3)  # 5 and 3 are arguments</pre>
+            </div>
+
+            <h3>Example: Multiple Parameters</h3>
+            <div class="example">
+                <pre>def calculate_area(length, width):
+    """Calculate the area of a rectangle"""
+    area = length * width
+    return area
+
+print(calculate_area(10, 5))  # Output: 50</pre>
+            </div>
+
+            <h2>Return Values</h2>
+            <p>Use the <code>return</code> statement to return a value from a function. If no return statement is present, the function returns <code>None</code>.</p>
+            <div class="example">
+                <pre>def square(x):
+    return x * x
+
+result = square(4)
+print(result)  # Output: 16</pre>
+            </div>
+
+            <h2>Default Parameters</h2>
+            <p>You can provide default values for parameters:</p>
+            <div class="example">
+                <pre>def greet(name="Friend"):
+    return f"Hello, {name}!"
+
+print(greet())         # Output: Hello, Friend!
+print(greet("Bob"))    # Output: Hello, Bob!</pre>
+            </div>
+
+            <h2>Keyword Arguments</h2>
+            <p>You can pass arguments using parameter names:</p>
+            <div class="example">
+                <pre>def describe_person(name, age, city):
+    return f"{name} is {age} years old and lives in {city}"
+
+# Positional arguments
+print(describe_person("Alice", 25, "NYC"))
+
+# Keyword arguments
+print(describe_person(name="Bob", age=30, city="LA"))</pre>
+            </div>
+
+            <h2>Variable-Length Arguments</h2>
+            <p>Use <code>*args</code> for variable number of positional arguments and <code>**kwargs</code> for keyword arguments:</p>
+            <div class="example">
+                <pre>def sum_all(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+print(sum_all(1, 2, 3, 4, 5))  # Output: 15</pre>
+            </div>
+
+            <h3>Example: **kwargs</h3>
+            <div class="example">
+                <pre>def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name="Alice", age=25, city="NYC")</pre>
+            </div>
+
+            <h2>Scope and Local Variables</h2>
+            <p>Variables defined inside a function have local scope and only exist within that function:</p>
+            <div class="example">
+                <pre>x = 10  # Global variable
+
+def my_function():
+    x = 5  # Local variable
+    print(x)  # Output: 5
+
+my_function()
+print(x)  # Output: 10</pre>
+            </div>
+
+            <h2>Docstrings</h2>
+            <p>A docstring is a string at the beginning of a function that explains what it does:</p>
+            <div class="example">
+                <pre>def factorial(n):
+    """Calculate the factorial of n"""
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial.__doc__)  # Prints the docstring</pre>
+            </div>
+
+            <h2>Lambda Functions</h2>
+            <p>Lambda functions are anonymous functions written in a single line using the <code>lambda</code> keyword:</p>
+            <div class="example">
+                <pre>square = lambda x: x * x
+print(square(5))  # Output: 25
+
+# Lambda with multiple parameters
+add = lambda x, y: x + y
+print(add(3, 4))  # Output: 7</pre>
+            </div>
+
+            <h2>Key Points to Remember</h2>
+            <div class="key-point">
+                <ul>
+                    <li>Functions make code reusable and organized</li>
+                    <li>Use <code>def</code> to define a function</li>
+                    <li>Parameters are inputs, arguments are the actual values</li>
+                    <li>Use <code>return</code> to send a value back</li>
+                    <li>Provide default parameter values when appropriate</li>
+                    <li>Use <code>*args</code> for variable positional arguments</li>
+                    <li>Use <code>**kwargs</code> for variable keyword arguments</li>
+                    <li>Lambda functions are useful for short, simple operations</li>
+                </ul>
+            </div>
+
+            <h2>Practice Exercise</h2>
+            <div class="example">
+                <p><strong>Task:</strong> Write a function that takes a number as input and returns whether it is prime or not.</p>
+                <p><strong>Hint:</strong> A prime number is only divisible by 1 and itself.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
