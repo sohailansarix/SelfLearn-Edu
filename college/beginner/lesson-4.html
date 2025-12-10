@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Control Flow - If/Else Statements | SelfLearn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        pre {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            line-height: 1.5;
+        }
+        .example {
+            background: #e8f4f8;
+            border-left: 4px solid #764ba2;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .key-point {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lesson 4: Control Flow - If/Else Statements</h1>
+            <p>Learn how to make decisions in Python</p>
+        </header>
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>Control flow statements allow you to execute different blocks of code based on certain conditions. The most fundamental control flow structure is the <code>if/else</code> statement.</p>
+
+            <h2>The if Statement</h2>
+            <p>An <code>if</code> statement evaluates a condition and executes code only if that condition is True.</p>
+            <div class="code-block">
+                <pre>if condition:
+    # Code executes if condition is True
+    print("Condition is True")</pre>
+            </div>
+
+            <h3>Example: Simple if Statement</h3>
+            <div class="example">
+                <pre>age = 18
+if age >= 18:
+    print("You are an adult")</pre>
+            </div>
+            <p><strong>Output:</strong> You are an adult</p>
+
+            <h2>The if...else Statement</h2>
+            <p>The <code>else</code> clause provides an alternative code block to execute if the condition is False.</p>
+            <div class="code-block">
+                <pre>if condition:
+    # Code if condition is True
+else:
+    # Code if condition is False</pre>
+            </div>
+
+            <h3>Example: if...else Statement</h3>
+            <div class="example">
+                <pre>score = 75
+if score >= 75:
+    print("A")
+else:
+    print("Not A")</pre>
+            </div>
+            <p><strong>Output:</strong> A</p>
+
+            <h2>The if...elif...else Statement</h2>
+            <p>The <code>elif</code> (else if) statement allows you to check multiple conditions.</p>
+            <div class="code-block">
+                <pre>if condition1:
+    # Code if condition1 is True
+elif condition2:
+    # Code if condition2 is True
+else:
+    # Code if both are False</pre>
+            </div>
+
+            <h3>Example: if...elif...else Statement</h3>
+            <div class="example">
+                <pre>age = 15
+if age < 13:
+    print("Child")
+elif age < 18:
+    print("Teenager")
+else:
+    print("Adult")</pre>
+            </div>
+            <p><strong>Output:</strong> Teenager</p>
+
+            <h2>Comparison Operators</h2>
+            <p>These operators are used in conditions:</p>
+            <ul>
+                <li><code>==</code> (equal to): a == b</li>
+                <li><code>!=</code> (not equal to): a != b</li>
+                <li><code>></code> (greater than): a > b</li>
+                <li><code><</code> (less than): a < b</li>
+                <li><code>>=</code> (greater than or equal to): a >= b</li>
+                <li><code><=</code> (less than or equal to): a <= b</li>
+            </ul>
+
+            <h2>Logical Operators</h2>
+            <p>Combine multiple conditions using logical operators:</p>
+            <ul>
+                <li><code>and</code>: Both conditions must be True</li>
+                <li><code>or</code>: At least one condition must be True</li>
+                <li><code>not</code>: Reverses the boolean result</li>
+            </ul>
+
+            <h3>Example: Using Logical Operators</h3>
+            <div class="example">
+                <pre>age = 25
+has_license = True
+
+if age >= 18 and has_license:
+    print("You can drive")
+else:
+    print("You cannot drive")</pre>
+            </div>
+            <p><strong>Output:</strong> You can drive</p>
+
+            <h2>Nested if Statements</h2>
+            <p>You can nest if statements inside each other:</p>
+            <div class="code-block">
+                <pre>if condition1:
+    if condition2:
+        # Code executes only if both are True
+        print("Both conditions are True")</pre>
+            </div>
+
+            <h3>Example: Nested if Statements</h3>
+            <div class="example">
+                <pre>age = 20
+has_money = True
+
+if age >= 18:
+    if has_money:
+        print("You can buy a ticket")
+    else:
+        print("You need money")
+else:
+    print("Too young")</pre>
+            </div>
+
+            <h2>Key Points to Remember</h2>
+            <div class="key-point">
+                <ul>
+                    <li>Indentation is crucial in Python - it defines code blocks</li>
+                    <li>Conditions must evaluate to True or False</li>
+                    <li>Use comparison operators to create conditions</li>
+                    <li>Combine conditions with <code>and</code>, <code>or</code>, <code>not</code></li>
+                    <li>You can nest if statements for more complex logic</li>
+                </ul>
+            </div>
+
+            <h2>Practice Exercise</h2>
+            <div class="example">
+                <p><strong>Task:</strong> Write a program that determines if a number is positive, negative, or zero.</p>
+                <p><strong>Hint:</strong> Use if...elif...else statements with comparison operators.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
