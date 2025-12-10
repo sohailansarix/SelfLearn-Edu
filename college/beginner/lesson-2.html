@@ -1,14 +1,127 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lesson 2: Variables & Data Types | SelfLearn</title><link rel="stylesheet" href="/SelfLearn-Edu/assets/css/base.css"><link rel="stylesheet" href="/SelfLearn-Edu/assets/css/layout.css"><link rel="stylesheet" href="/SelfLearn-Edu/assets/css/components.css"></head><body><header class="site-header"><div class="header-container"><a href="/SelfLearn-Edu/index.html" class="logo">SelfLearn<span>Edu</span></a><button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button><nav id="main-nav"><ul class="nav"><li><a href="/SelfLearn-Edu/index.html">Home</a></li><li><a href="/SelfLearn-Edu/college/python-overview.html">Python</a></li></ul></nav><button class="theme-toggle" id="theme-toggle">🌙</button></div></header><main id="main-content"><article class="lesson" data-lesson-id="lesson-2" data-track="beginner"><header class="lesson-header"><p class="lesson-tag">Module 1 • Foundations</p><h1>Variables & Data Types</h1><p class="lesson-meta">⏱️ 25 minutes • 🎯 Beginner</p></header><section class="lesson-content"><h2>Learning Objectives</h2><ul><li>Understand variables and naming conventions</li><li>Learn Python's basic data types: int, float, str, bool</li><li>Perform type conversion (casting)</li><li>Check variable types using type()</li></ul><h2>What are Variables?</h2><p>A variable is a container for storing data values. In Python, you don't need to declare the variable type:</p><pre><code>name = "Alice"
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Variables & Data Types | SelfLearn-Edu</title>
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SelfLearn-Edu</h1>
+            <p>Learn Python Programming Step by Step</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="/SelfLearn-Edu/college/beginner/">Beginner Track</a>
+            / Lesson 2: Variables & Data Types
+        </nav>
+
+        <section class="lesson-content">
+            <h2>Lesson 2: Variables & Data Types</h2>
+            <p>Learn how to store and work with different types of data in Python.</p>
+
+            <h3>What are Variables?</h3>
+            <p>A variable is a container for storing data values. In Python, you don't need to declare the variable type:</p>
+            <div class="example">
+                <pre><code class="language-python">name = "Alice"
 age = 25
 height = 5.6
-is_student = True</code></pre><h2>Naming Rules</h2><ul><li>Must start with letter or underscore (_)</li><li>Can contain letters, numbers, underscores</li><li>Case-sensitive (name ≠ Name)</li><li>Use snake_case for multiple words</li></ul><h2>Data Types</h2><h3>1. String (str)</h3><pre><code>name = "John"
-city = 'Mumbai'</code></pre><h3>2. Integer (int)</h3><pre><code>age = 25
-count = -100</code></pre><h3>3. Float (float)</h3><pre><code>price = 19.99
-temperature = -5.5</code></pre><h3>4. Boolean (bool)</h3><pre><code>is_logged_in = True
-is_admin = False</code></pre><h2>Type Conversion</h2><pre><code>age = int("25")
-age_str = str(30)
-price = float("19.99")</code></pre></section><section style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-alt); border-radius: var(--radius);"><h2>Practice Exercises</h2><div style="margin-bottom: 1.5rem;"><h3>Exercise 2.1</h3><p>Create variables for name, age, height, student status and print them.</p><details><summary>Solution</summary><pre><code>name = "John"
-age = 20
-height = 5.8
+is_student = True</code></pre>
+            </div>
+
+            <h3>Naming Rules</h3>
+            <ul>
+                <li>Must start with a letter or underscore (_)</li>
+                <li>Can contain letters, numbers, and underscores</li>
+                <li>Are case-sensitive (name != Name)</li>
+                <li>Avoid Python keywords as variable names</li>
+            </ul>
+
+            <h3>Data Types</h3>
+            <p>Python has several built-in data types:</p>
+
+            <h4>1. Integers (int)</h4>
+            <p>Whole numbers, positive or negative:</p>
+            <div class="example">
+                <pre><code class="language-python">age = 25
+temperature = -5
+count = 100</code></pre>
+            </div>
+
+            <h4>2. Floats (float)</h4>
+            <p>Numbers with decimal points:</p>
+            <div class="example">
+                <pre><code class="language-python">price = 19.99
+height = 5.6
+pi = 3.14159</code></pre>
+            </div>
+
+            <h4>3. Strings (str)</h4>
+            <p>Text data, enclosed in quotes:</p>
+            <div class="example">
+                <pre><code class="language-python">city = 'Mumbai'
+name = "Alice"
+message = '''This is a
+multi-line string'''</code></pre>
+            </div>
+
+            <h4>4. Booleans (bool)</h4>
+            <p>True or False values:</p>
+            <div class="example">
+                <pre><code class="language-python">is_logged_in = True
+is_admin = False</code></pre>
+            </div>
+
+            <h3>Type Conversion (Casting)</h3>
+            <p>Convert one data type to another:</p>
+            <div class="example">
+                <pre><code class="language-python">age = int("25")          # "25" string to 25 integer
+age_str = str(30)       # 30 integer to "30" string
+price = float("19.99")  # "19.99" string to 19.99 float</code></pre>
+            </div>
+
+            <h3>Checking Data Types</h3>
+            <p>Use the type() function to check the data type:</p>
+            <div class="example">
+                <pre><code class="language-python">name = "Alice"
+age = 25
+height = 5.6
 is_student = True
-print(name, age, height, is_student)</code></pre></details></div></section><section style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);"><div style="display: flex; gap: 1rem;"><a href="lesson-1.html"><button>← Previous</button></a><button id="mark-complete-btn" onclick="markLessonComplete('lesson-2')">✓ Complete</button><a href="lesson-3.html"><button>Next →</button></a></div></section></article></main><footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border); margin-top: 3rem;"><p>© 2024 SelfLearn Edu</p></footer><script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script><script>function markLessonComplete(id){const p=JSON.parse(localStorage.getItem('py-progress')||'{"completed":[]}');if(!p.completed.includes(id)){p.completed.push(id);localStorage.setItem('py-progress',JSON.stringify(p));}}</script></body></html>
+
+print(type(name))        # <class 'str'>
+print(type(age))         # <class 'int'>
+print(type(height))      # <class 'float'>
+print(type(is_student))  # <class 'bool'></code></pre>
+            </div>
+
+            <h3>Key Points to Remember</h3>
+            <ul class="key-point">
+                <li>Variables store data values</li>
+                <li>Python automatically determines the data type</li>
+                <li>Strings need quotes (single or double)</li>
+                <li>Use type() to check a variable's data type</li>
+                <li>You can convert between data types when needed</li>
+                <li>Choose meaningful variable names</li>
+            </ul>
+        </section>
+
+        <div class="navigation-buttons">
+            <a href="lesson-1.html" class="btn btn-secondary">← Previous: Introduction</a>
+            <a href="lesson-3.html" class="btn btn-primary">Next: Strings & Input/Output →</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
+    <script src="/SelfLearn-Edu/assets/js/markLessonComplete.js"></script>
+</body>
+</html>
