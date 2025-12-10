@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real Numbers - SelfLearn Edu</title>
+  <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/base.css">
+  <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/layout.css">
+  <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <div class="logo"><a href="/SelfLearn-Edu/index.html" style="color:inherit;text-decoration:none">SelfLearn<span>Edu</span></a></div>
+      <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <nav><ul class="nav"><li><a href="/SelfLearn-Edu/curriculum.html">← Back to Curriculum</a></li></ul></nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="lesson" data-lesson-id="lesson-real-numbers">
+      <header>
+        <p class="lesson-tag">Class 10 • Chapter 1</p>
+        <h1>Real Numbers</h1>
+        <p class="lesson-meta">Estimated: 45 minutes • Level: Beginner</p>
+      </header>
+
+      <section>
+        <h2>Learning Objectives</h2>
+        <ul>
+          <li>Understand the concept of real numbers and their properties</li>
+          <li>Distinguish between rational and irrational numbers</li>
+          <li>Apply Euclidean algorithm to find HCF and LCM</li>
+          <li>Work with surds and rationalize denominators</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What are Real Numbers?</h2>
+        <p>Real numbers are all numbers that can be found on a number line. They include:</p>
+        <ul>
+          <li><strong>Natural Numbers:</strong> 1, 2, 3, 4, ... (N)</li>
+          <li><strong>Whole Numbers:</strong> 0, 1, 2, 3, ... (W)</li>
+          <li><strong>Integers:</strong> ..., -2, -1, 0, 1, 2, ... (Z)</li>
+          <li><strong>Rational Numbers:</strong> p/q where p, q are integers and q ≠ 0 (Q)</li>
+          <li><strong>Irrational Numbers:</strong> √2, π, e, ... (non-repeating, non-terminating decimals)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Key Concepts</h2>
+        <h3>Rational Numbers</h3>
+        <p>A rational number is any number that can be expressed as p/q where p and q are integers and q ≠ 0.</p>
+        <p><strong>Examples:</strong> 1/2, -3/4, 5, 0.333... (1/3)</p>
+
+        <h3>Irrational Numbers</h3>
+        <p>Irrational numbers cannot be expressed as a fraction of two integers. Their decimal representation is non-terminating and non-repeating.</p>
+        <p><strong>Examples:</strong> √2 ≈ 1.414..., π ≈ 3.14159..., φ ≈ 1.618...</p>
+
+        <h3>Euclidean Algorithm (for HCF/GCD)</h3>
+        <p><strong>Formula:</strong> For any two positive integers a and b, HCF(a,b) = HCF(b, a mod b)</p>
+        <p><strong>Example:</strong> Find HCF(48, 18)
+          <br>48 = 18 × 2 + 12
+          <br>18 = 12 × 1 + 6
+          <br>12 = 6 × 2 + 0
+          <br>∴ HCF = 6</p>
+      </section>
+
+      <section>
+        <h2>Practice Problems</h2>
+        <ol>
+          <li>Classify the following as rational or irrational:
+            <ul>
+              <li>5/3</li>
+              <li>√16</li>
+              <li>√7</li>
+              <li>0.101001000...</li>
+            </ul>
+          </li>
+          <li>Find HCF(56, 72) using the Euclidean algorithm.</li>
+          <li>Rationalize: 1/√3</li>
+          <li>Prove that √3 is irrational.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Summary</h2>
+        <p><strong>Key Takeaways:</strong></p>
+        <ul>
+          <li>Real numbers = Rational + Irrational</li>
+          <li>Rational numbers have terminating or repeating decimals</li>
+          <li>Irrational numbers have non-terminating, non-repeating decimals</li>
+          <li>Euclidean algorithm efficiently finds HCF/GCD of two numbers</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Next Steps</h2>
+        <div style="margin:1.5rem 0">
+          <a href="/SelfLearn-Edu/quizzes/quiz-real-numbers.html" class="btn">Take Quiz</a>
+          <a href="/SelfLearn-Edu/exercises/exercise-real-numbers.html" class="btn" style="margin-left:1rem">Practice Exercises</a>
+          <button class="btn" onclick="markLessonCompleted('lesson-real-numbers')" style="margin-left:1rem">Mark Completed</button>
+        </div>
+      </section>
+
+      <div class="progress-indicator" id="progress-section" style="margin-top:2rem;padding:1rem;background:var(--bg-alt);border-radius:var(--radius)">
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <p class="progress-text" style="margin-top:0.5rem"></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer"><p>&copy; 2025 SelfLearn Edu</p></footer>
+  <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
+  <script src="/SelfLearn-Edu/assets/js/progress.js"></script>
+  <script>
+    window.TOTAL_LESSONS = 6;
+    document.addEventListener('DOMContentLoaded', () => {
+      updateProgressBar('progress-section', window.TOTAL_LESSONS);
+    });
+  </script>
+</body>
+</html>
