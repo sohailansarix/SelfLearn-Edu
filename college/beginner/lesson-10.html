@@ -1,28 +1,146 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lesson 10: Exception Handling | SelfLearn</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px}.container{max-width:900px;margin:0 auto;background:white;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.3);overflow:hidden}header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:40px 20px;text-align:center}header h1{font-size:2.5em;margin-bottom:10px}h2{color:#667eea;margin-top:30px;margin-bottom:15px;border-bottom:2px solid #667eea;padding-bottom:10px}h3{color:#764ba2;margin-top:20px;margin-bottom:10px}p{margin-bottom:15px;line-height:1.8}.code-block{background:#f5f5f5;border-left:4px solid #667eea;padding:15px;margin:20px 0;border-radius:5px}pre{font-family:'Courier New',monospace;color:#333;line-height:1.5}.example{background:#e8f4f8;border-left:4px solid #764ba2;padding:15px;margin:20px 0;border-radius:5px}.key-point{background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin:20px 0;border-radius:5px}.content{padding:40px}ul,ol{margin-left:20px;margin-bottom:15px}li{margin-bottom:10px}.footer{background:#f9f9f9;padding:20px;text-align:center;border-top:1px solid #ddd;color:#666}</style></head><body><div class="container"><header><h1>Lesson 10: Exception Handling</h1><p>Write robust code that handles errors gracefully</p></header><div class="content"><h2>Introduction</h2><p>Exception handling allows your program to handle errors gracefully without crashing. It's a crucial skill for writing reliable code.</p><h2>Try-Except Block</h2><p>The basic structure for exception handling:</p><div class="code-block"><pre>try:
-    # Code that might raise an exception
-    result = 10 / 0
-except ZeroDivisionError:
-    # Handle specific exception
-    print("Cannot divide by zero")</pre></div><h2>Multiple Exceptions</h2><div class="example"><pre>try:
-    number = int(input("Enter number: "))
-    result = 10 / number
-except ValueError:
-    print("Invalid input")
-except ZeroDivisionError:
-    print("Cannot divide by zero")
-except Exception:
-    print("An error occurred")</pre></div><h2>Finally Block</h2><p>Code in <code>finally</code> always executes, whether exception occurred or not:</p><div class="example"><pre>try:
-    file = open("test.txt", "r")
-    content = file.read()
-except FileNotFoundError:
-    print("File not found")
-finally:
-    file.close()</pre></div><h2>Raising Exceptions</h2><div class="example"><pre>def check_age(age):
-    if age < 0:
-        raise ValueError("Age cannot be negative")
-    return f"Age is {age}"
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10: Advanced Topics | SelfLearn-Edu</title>
+    <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SelfLearn-Edu</h1>
+            <p>Learn Python Programming Step by Step</p>
+        </div>
+    </header>
 
-try:
-    check_age(-5)
-except ValueError as e:
-    print(f"Error: {e}")</pre></div><h2>Common Exceptions</h2><div class="key-point"><ul><li><code>ValueError</code>: Invalid argument value</li><li><code>TypeError</code>: Wrong data type</li><li><code>IndexError</code>: Index out of range</li><li><code>KeyError</code>: Dictionary key not found</li><li><code>FileNotFoundError</code>: File doesn't exist</li><li><code>ZeroDivisionError</code>: Division by zero</li></ul></div><h2>Best Practices</h2><div class="key-point"><ul><li>Catch specific exceptions first</li><li>Use generic <code>Exception</code> as last resort</li><li>Always use <code>finally</code> for cleanup</li><li>Provide meaningful error messages</li><li>Don't silently ignore exceptions</li></ul></div></div><div class="footer"><p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p></div></div></body></html>
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="/SelfLearn-Edu/college/beginner/">Beginner Track</a>
+            / Lesson 10: Advanced Topics
+        </nav>
+
+        <section class="lesson-content">
+            <h2>Lesson 10: Advanced Topics & Next Steps</h2>
+            <p>Explore advanced Python concepts and plan your learning journey beyond the basics.</p>
+
+            <h3>Object-Oriented Programming (OOP)</h3>
+            <p>Learn to organize code using classes and objects:</p>
+            <div class="example">
+                <pre><code class="language-python">class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def greet(self):
+        return f"Hello, I'm {self.name}"
+
+person = Person("Alice", 25)
+print(person.greet())  # Hello, I'm Alice</code></pre>
+            </div>
+
+            <h3>List Comprehensions</h3>
+            <p>Write concise and efficient list creation:</p>
+            <div class="example">
+                <pre><code class="language-python"># Traditional approach
+squares = []
+for i in range(10):
+    squares.append(i**2)
+
+# List comprehension
+squares = [i**2 for i in range(10)]
+
+# With conditions
+even_squares = [i**2 for i in range(10) if i % 2 == 0]</code></pre>
+            </div>
+
+            <h3>Decorators</h3>
+            <p>Modify function behavior without changing the function itself:</p>
+            <div class="example">
+                <pre><code class="language-python">def my_decorator(func):
+    def wrapper():
+        print("Something before function")
+        func()
+        print("Something after function")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+# Output:
+# Something before function
+# Hello!
+# Something after function</code></pre>
+            </div>
+
+            <h3>Lambda Functions</h3>
+            <p>Create anonymous functions for simple operations:</p>
+            <div class="example">
+                <pre><code class="language-python"># Regular function
+def add(x, y):
+    return x + y
+
+# Lambda equivalent
+add = lambda x, y: x + y
+
+# Useful with map, filter, sort
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # [1, 4, 9, 16, 25]</code></pre>
+            </div>
+
+            <h3>Generators</h3>
+            <p>Create memory-efficient iterables:</p>
+            <div class="example">
+                <pre><code class="language-python">def count_up_to(n):
+    i = 1
+    while i <= n:
+        yield i
+        i += 1
+
+for num in count_up_to(5):
+    print(num)  # Prints 1, 2, 3, 4, 5</code></pre>
+            </div>
+
+            <h3>Next Steps in Your Python Journey</h3>
+            <ul class="key-point">
+                <li><strong>Web Development:</strong> Learn Flask or Django to build web applications</li>
+                <li><strong>Data Science:</strong> Explore NumPy, Pandas, and Matplotlib for data analysis</li>
+                <li><strong>Machine Learning:</strong> Study scikit-learn and TensorFlow</li>
+                <li><strong>Automation:</strong> Master script writing for system administration</li>
+                <li><strong>Game Development:</strong> Explore Pygame for game creation</li>
+                <li><strong>Best Practices:</strong> Learn design patterns and software engineering principles</li>
+            </ul>
+
+            <h3>Key Points to Remember</h3>
+            <ul class="key-point">
+                <li>OOP helps organize larger projects effectively</li>
+                <li>List comprehensions make code more Pythonic</li>
+                <li>Decorators are powerful for cross-cutting concerns</li>
+                <li>Generators are efficient for large datasets</li>
+                <li>Continue practicing and building projects</li>
+                <li>Read open-source code to learn from others</li>
+            </ul>
+
+            <h3>Congratulations!</h3>
+            <p>You've completed the Python Beginner Track! You now have a solid foundation in Python programming. Continue practicing with real-world projects and explore advanced topics to deepen your skills.</p>
+        </section>
+
+        <div class="navigation-buttons">
+            <a href="lesson-9.html" class="btn btn-secondary">← Previous: Exception Handling</a>
+            <a href="/SelfLearn-Edu/college/" class="btn btn-primary">Back to Course Index →</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
+    <script src="/SelfLearn-Edu/assets/js/markLessonComplete.js"></script>
+</body>
+</html>
