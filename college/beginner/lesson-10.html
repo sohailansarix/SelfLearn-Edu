@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Lesson 10: Exception Handling | SelfLearn</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px}.container{max-width:900px;margin:0 auto;background:white;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.3);overflow:hidden}header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:40px 20px;text-align:center}header h1{font-size:2.5em;margin-bottom:10px}h2{color:#667eea;margin-top:30px;margin-bottom:15px;border-bottom:2px solid #667eea;padding-bottom:10px}h3{color:#764ba2;margin-top:20px;margin-bottom:10px}p{margin-bottom:15px;line-height:1.8}.code-block{background:#f5f5f5;border-left:4px solid #667eea;padding:15px;margin:20px 0;border-radius:5px}pre{font-family:'Courier New',monospace;color:#333;line-height:1.5}.example{background:#e8f4f8;border-left:4px solid #764ba2;padding:15px;margin:20px 0;border-radius:5px}.key-point{background:#fff3cd;border-left:4px solid #ffc107;padding:15px;margin:20px 0;border-radius:5px}.content{padding:40px}ul,ol{margin-left:20px;margin-bottom:15px}li{margin-bottom:10px}.footer{background:#f9f9f9;padding:20px;text-align:center;border-top:1px solid #ddd;color:#666}</style></head><body><div class="container"><header><h1>Lesson 10: Exception Handling</h1><p>Write robust code that handles errors gracefully</p></header><div class="content"><h2>Introduction</h2><p>Exception handling allows your program to handle errors gracefully without crashing. It's a crucial skill for writing reliable code.</p><h2>Try-Except Block</h2><p>The basic structure for exception handling:</p><div class="code-block"><pre>try:
+    # Code that might raise an exception
+    result = 10 / 0
+except ZeroDivisionError:
+    # Handle specific exception
+    print("Cannot divide by zero")</pre></div><h2>Multiple Exceptions</h2><div class="example"><pre>try:
+    number = int(input("Enter number: "))
+    result = 10 / number
+except ValueError:
+    print("Invalid input")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except Exception:
+    print("An error occurred")</pre></div><h2>Finally Block</h2><p>Code in <code>finally</code> always executes, whether exception occurred or not:</p><div class="example"><pre>try:
+    file = open("test.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found")
+finally:
+    file.close()</pre></div><h2>Raising Exceptions</h2><div class="example"><pre>def check_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    return f"Age is {age}"
+
+try:
+    check_age(-5)
+except ValueError as e:
+    print(f"Error: {e}")</pre></div><h2>Common Exceptions</h2><div class="key-point"><ul><li><code>ValueError</code>: Invalid argument value</li><li><code>TypeError</code>: Wrong data type</li><li><code>IndexError</code>: Index out of range</li><li><code>KeyError</code>: Dictionary key not found</li><li><code>FileNotFoundError</code>: File doesn't exist</li><li><code>ZeroDivisionError</code>: Division by zero</li></ul></div><h2>Best Practices</h2><div class="key-point"><ul><li>Catch specific exceptions first</li><li>Use generic <code>Exception</code> as last resort</li><li>Always use <code>finally</code> for cleanup</li><li>Provide meaningful error messages</li><li>Don't silently ignore exceptions</li></ul></div></div><div class="footer"><p>&copy; 2024 SelfLearn-Edu. All rights reserved.</p></div></div></body></html>
