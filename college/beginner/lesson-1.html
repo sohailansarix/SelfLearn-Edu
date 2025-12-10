@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn Python Setup - Install Python, configure your environment, and run your first program.">
+  <title>Lesson 1: Python Setup & Installation | SelfLearn</title>
+  <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/base.css">
+  <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/layout.css">
+  <link rel="stylesheet" href="/SelfLearn-Edu/assets/css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/SelfLearn-Edu/index.html" class="logo">SelfLearn<span>Edu</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
+        <ul class="nav">
+          <li><a href="/SelfLearn-Edu/index.html">Home</a></li>
+          <li><a href="/SelfLearn-Edu/curriculum.html">Curriculum</a></li>
+          <li><a href="/SelfLearn-Edu/college/python-overview.html" class="active">Python</a></li>
+          <li><a href="/SelfLearn-Edu/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <form class="site-search" role="search">
+        <input id="search-input" type="search" placeholder="Search lessons..." aria-label="Search">
+      </form>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="lesson" data-lesson-id="lesson-1" data-track="beginner">
+      <header class="lesson-header">
+        <div class="breadcrumb">
+          <a href="/SelfLearn-Edu/college/python-overview.html">Python Course</a>
+          <span> → </span>
+          <a href="/SelfLearn-Edu/college/beginner/">Beginner Track</a>
+          <span> → </span>
+          <span>Lesson 1</span>
+        </div>
+        <p class="lesson-tag">Module 1 • Foundations</p>
+        <h1>Python Setup & Installation</h1>
+        <p class="lesson-meta">⏱️ 20 minutes • 🎯 Beginner • 📊 Progress: <span id="progress-percent">0%</span></p>
+      </header>
+
+      <section class="lesson-content">
+        <h2>Learning Objectives</h2>
+        <ul>
+          <li>Download and install Python 3.11+</li>
+          <li>Verify installation and check Python version</li>
+          <li>Set up your first code editor (VS Code)</li>
+          <li>Run your first Python program</li>
+        </ul>
+
+        <h2>What is Python?</h2>
+        <p>Python is a high-level, interpreted programming language known for its simple, readable syntax. It's widely used in:</p>
+        <ul>
+          <li><strong>Web Development</strong> (Django, Flask)</li>
+          <li><strong>Data Science</strong> (Pandas, NumPy, Scikit-learn)</li>
+          <li><strong>Automation</strong> (Scripts, bots, testing)</li>
+          <li><strong>AI & Machine Learning</strong> (TensorFlow, PyTorch)</li>
+          <li><strong>Desktop Applications</strong></li>
+        </ul>
+
+        <h2>Step 1: Download Python</h2>
+        <ol>
+          <li>Visit <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org</a></li>
+          <li>Download Python 3.11 or later (choose your OS: Windows, macOS, or Linux)</li>
+          <li><strong>Important:</strong> Check the box "Add Python to PATH" during installation (Windows only)</li>
+        </ol>
+
+        <h2>Step 2: Verify Installation</h2>
+        <p>Open your terminal/command prompt and type:</p>
+        <pre><code>python --version</code></pre>
+        <p>You should see: <code>Python 3.11.x</code> (or later version)</p>
+
+        <h2>Step 3: Run Your First Program</h2>
+        <p>Open terminal and type:</p>
+        <pre><code>python
+print("Hello, Python!")</code></pre>
+        <p>You should see: <code>Hello, Python!</code></p>
+
+        <h2>Step 4: Set Up VS Code (Optional but Recommended)</h2>
+        <ol>
+          <li>Download VS Code from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a></li>
+          <li>Install the "Python" extension by Microsoft</li>
+          <li>Create a file: <code>hello.py</code></li>
+          <li>Type: <code>print("Hello from VS Code!")</code></li>
+          <li>Run: Press Ctrl+F5 or click the Run button</li>
+        </ol>
+
+        <div style="background: var(--accent-soft); padding: 1rem; border-radius: var(--radius); margin: 1.5rem 0; border-left: 4px solid var(--accent);">
+          <strong>💡 Tip:</strong> Python is interactive! You can test code line-by-line in the Python shell before writing full programs.
+        </div>
+      </section>
+
+      <section class="lesson-exercises" style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-alt); border-radius: var(--radius);">
+        <h2>Practice Exercises</h2>
+        <div style="margin-bottom: 1.5rem;">
+          <h3>Exercise 1.1: Print Your Name</h3>
+          <p>Write a program that prints: "My name is [Your Name]"</p>
+          <details style="cursor: pointer;">
+            <summary style="font-weight: 600; padding: 0.5rem; background: var(--bg); border-radius: 4px;">Solution</summary>
+            <pre style="margin-top: 0.5rem;"><code>print("My name is John")</code></pre>
+          </details>
+        </div>
+
+        <div>
+          <h3>Exercise 1.2: Print Multiple Lines</h3>
+          <p>Write a program that prints three lines with different information about you.</p>
+          <details style="cursor: pointer;">
+            <summary style="font-weight: 600; padding: 0.5rem; background: var(--bg); border-radius: 4px;">Solution</summary>
+            <pre style="margin-top: 0.5rem;"><code>print("Name: John")
+print("Age: 20")
+print("City: Mumbai")</code></pre>
+          </details>
+        </div>
+      </section>
+
+      <section class="lesson-navigation" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+          <button disabled style="opacity: 0.5; cursor: not-allowed;">← Previous Lesson</button>
+          <button id="mark-complete-btn" onclick="markLessonComplete('lesson-1')" style="flex: 1;">✓ Mark as Complete</button>
+          <a href="/SelfLearn-Edu/college/beginner/lesson-2.html" style="flex: 1;"><button>Next Lesson →</button></a>
+        </div>
+        <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius);">
+          <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+            <div id="progress-fill" style="height: 100%; background: var(--accent); width: 0%; transition: width 0.3s ease;"></div>
+          </div>
+          <p id="progress-text" style="margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--muted);">Progress: 0/10 lessons (0%)</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer" style="text-align: center; padding: 2rem 1.5rem; border-top: 1px solid var(--border); margin-top: 3rem;">
+    <p>© 2024 SelfLearn Edu. Open-source project built for learners, by learners.</p>
+  </footer>
+
+  <script src="/SelfLearn-Edu/assets/js/theme-toggle.js"></script>
+  <script src="/SelfLearn-Edu/assets/js/progress.js"></script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('active');
+    });
+
+    function markLessonComplete(lessonId) {
+      const progress = JSON.parse(localStorage.getItem('py-progress') || '{"completed":[]}');
+      if (!progress.completed.includes(lessonId)) {
+        progress.completed.push(lessonId);
+        localStorage.setItem('py-progress', JSON.stringify(progress));
+        updateProgress();
+        document.getElementById('mark-complete-btn').textContent = '✓ Completed';
+        document.getElementById('mark-complete-btn').disabled = true;
+      }
+    }
+
+    function updateProgress() {
+      const progress = JSON.parse(localStorage.getItem('py-progress') || '{"completed":[]}');
+      const total = 10;
+      const percent = Math.round((progress.completed.length / total) * 100);
+      document.getElementById('progress-percent').textContent = percent + '%';
+      document.getElementById('progress-fill').style.width = percent + '%';
+      document.getElementById('progress-text').textContent = `Progress: ${progress.completed.length}/${total} lessons (${percent}%)`;
+    }
+
+    updateProgress();
+  </script>
+</body>
+</html>
