@@ -70,6 +70,26 @@ main {
 }
 
 @media (max-width: 768px) {
-  nav ul { gap: 0.75rem; }
+  
+  .site-header > * {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  nav ul li a {
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .site-search {
+    max-width: 100%;
+    width: 100%;
+  }
   .site-search { max-width: 200px; }
 }
